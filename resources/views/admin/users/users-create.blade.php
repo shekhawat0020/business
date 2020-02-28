@@ -52,7 +52,7 @@
 											<label class="form-label">Profile Image</label>
 											<input type="file" class="form-control" name="profile_image" id="profile_image" placeholder="Mobile..">
 										</div>
-										@if(Auth()->user()->can('Business'))
+										@if(!Auth()->user()->hasRole('Super Admin') && Auth()->user()->can('Business'))
 										<div class="form-group" style="display:none">
 											<label class="form-label">Role *</label>
 											<select name="roles[]" id="roles" multiple="multiple" class="multi-select form-control">												
